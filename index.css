@@ -1,0 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #c8c7c5;
+}
+canvas {
+    border: 1px solid black;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
