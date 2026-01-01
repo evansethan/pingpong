@@ -15,9 +15,7 @@ function Ball(x, y, dx, dy, radius, color) {
     this.color = color;
 }
 
-
-let ball1 = new Ball(startX, startY, -2, 0, 10, randomColor())
-let ballsList = [ball1];
+let ballsList = [];
 
 function randomColor() {
     const randomColor = Math.floor(Math.random() * 16777215);
