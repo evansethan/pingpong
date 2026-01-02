@@ -27,11 +27,12 @@ function randomColor() {
 
 function addBall(x, y) {
     let size = Math.floor(Math.random() * 10) + 11
+    let launch = -(Math.floor(Math.random() * 10) + 2)
     let direction = -2
     if (Math.random() > 0.5) {
         direction = 2
     }
-    let newBall = new Ball(x, y, direction, -10, size, randomColor())
+    let newBall = new Ball(x, y, direction, launch, size, randomColor())
     ballsList.push(newBall)
 }
 
@@ -76,12 +77,20 @@ function startGame() {
     setInterval(draw, 10);
 }
 
+function clearBalls() {
+    ballsList = []
+}
+
 const runButton = document.getElementById("runButton");
 runButton.addEventListener("click", () => {
     startGame();
     runButton.disabled = true;
 });
 
+const clearButton = document.getElementById("clearButton");
+clearButton.addEventListener("click", () => {
+    clearBalls();
+});
 
 canvas.addEventListener('click', function(event) {
     if (gameStarted) {
